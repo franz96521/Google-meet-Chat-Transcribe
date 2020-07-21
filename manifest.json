@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "google meet chat transcript",
+    "version": "1.0",
+    "description": "google meet chat transcript",
+
+    "icons": {
+        "128": "images/icons/128.png",
+        "16": "images/icons/16.png",
+        "19": "images/icons/19.png",
+        "38": "images/icons/38.png",
+        "64": "images/icons/64.png"
+    },
+    "browser_action": {
+        "default_icon": "images/icons/16.png",
+        "default_title": "google meet chat transcript",
+        "default_popup": "background.html"
+
+    },
+    "content_scripts": [{
+
+        "js": ["js/jquery.js", "contentscript.js"],
+        "matches": ["https://meet.google.com/*"],
+        "run_at": "document_start"
+    }],
+    "permissions": [
+        "activeTab",
+        "https://meet.google.com/*"
+    ]
+
+}
